@@ -24,14 +24,16 @@ public class LoopFun
        * @return Upper case string of the first letter of each word
        */
       public String acronym(String phrase) {
-         String[] result = x.split("");
-         for (int i = 0; i < phrase.length; i++) {
-         String s = phrase[i];
-         return (s.charAt(0));
+         //String result = x.split"");
+         //for (int i = 0; i < phrase.length; i++) {
+         //String s = phrase[i];
+         //return (s.charAt(0));
+         
+        
+         String result = phrase.substring(0,1).toUpperCase() + phrase.substring(1);
+         return result;
         }
-          //String result = phrase.substring(0,1).toUpperCase() + phrase.substring(1);
-         //return result;
-      }
+      
 
       /**
        * To prevent anyone from reading our messages, we can encrypt it so it will only be readable by its
@@ -45,7 +47,16 @@ public class LoopFun
        * @param word
        * @return the encrypted string by shifting each character by three character
        */
-      public String encrypt(String word) {
-          return null;
+      public String encrypt(String word, int shift) {
+          String result = "";
+          int len = word.length();
+          for (int i = 0; i < len; i++) {
+              char c = (char) (word.charAt(i) + shift);
+              if (c > 'z')
+              result += (char) (word.charAt(i) - (26-shift));
+              else
+              result += (char) (word.charAt(i) + shift);
+            }
+          return result;
       }
 }

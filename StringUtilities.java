@@ -26,17 +26,26 @@ public class StringUtilities {
      */
     public String reverse(String valueToBeReversed) {
     if (valueToBeReversed == null) {
-        return valueToBeReversed
+        return valueToBeReversed;
+    }
+    String output = "";
+    for (int i= valueToBeReversed.length() - 1; i >= 0; i--) {
+        output = output + valueToBeReversed.charAt(i);
+    }
     
-    return result;
+    return output;
 }
+
 
     /**
      * @param word word to get middle character of
      * @return middle character of `word`
      */
     public Character getMiddleCharacter(String word) {
-        return null;
+       int result = word.length();
+       int middle = result/2;
+       char c [] = word.toCharArray();
+       return c [middle];
     }
 
     /**
@@ -45,14 +54,26 @@ public class StringUtilities {
      * @return `value` with char of value `charToRemove` removed
      */
     public String removeCharacter(String value, Character charToRemove) {
-        return null;
+        //StringBuilder result = value.toString(charToRemove);
+        
+       String result = null;
+       if ((value != null) && (value.length() > charToRemove )) {
+        result = value.substring(charToRemove, value.length() - 1);
+       
+        }
+        return result;
     }
+   
+        
+    
 
     /**
      * @param sentence String delimited by spaces representative of a sentence
      * @return last `word` in sentence
      */
     public String getLastWord(String sentence) {
-        return null;
+        
+        String result = sentence.substring(sentence.lastIndexOf(" ")+1);
+        return result;
     }
 }
