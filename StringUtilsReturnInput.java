@@ -59,7 +59,7 @@ public class StringUtilsReturnInput {
     @Test
     public void test4() {
         // given
-        String input = "Pschent";
+        String input = ç;
         String expected = input;
 
         // when
